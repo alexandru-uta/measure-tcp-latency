@@ -4,6 +4,9 @@
 ## and then runs iperf3 between two machines, gathers TCP packet data using tcpdump,
 ## and subsequently analyzes the packet rtt data using wireshark
 
+# apt may not know about the iperf3 package unless updated first 
+sudo apt update
+
 # install iperf3
 sudo apt install iperf3
 

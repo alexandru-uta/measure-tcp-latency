@@ -1,4 +1,3 @@
-ens1f1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 #! /bin/bash
 
 ## this is a script that installs iperf3, tshark/wireshark on ubuntu 18.04 - based machines

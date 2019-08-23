@@ -14,7 +14,7 @@ do
 	echo "trial #$i"
 
 	# start collecting data using tcpdump
-	tcpdump host 10.10.1.1 -w dumpfile.pcap -s 80 &
+	tcpdump host $IPERF_SERVER -w dumpfile.pcap -s 80 &
 
 	# start the iperf3 client
 	iperf3 -c $IPERF_SERVER -i 1 -t $TRANSFER_INTERVAL --json --logfile trial_${i}_iperf.data
@@ -23,7 +23,7 @@ do
 	pkill -2 tcpdump
 
 	# run the tshark analysis
-	time tshark -r dumpfile.pcap -Y "tcp.analysis.ack_rtt and ip.dst==10.10.1.255/24" -e tcp.analysis.ack_rtt -T fields -E separator=,  > trial_${i}_rtt.data
+	time tshark -r dumpfile.pcap -Y "tcp.analysis.ack_rtt and ip.dst==$IPERF_SERVER/24" -e tcp.analysis.ack_rtt -T fields -E separator=,  > trial_${i}_rtt.data
 done
 
 

@@ -4,7 +4,7 @@
 IPERF_SERVER=172.30.0.176
 
 # network transfer time interval, in seconds
-TRANSFER_INTERVAL=600
+TRANSFER_INTERVAL=1200
 #TRANSFER_INTERVAL=5
 
 # number of trials for the experiment

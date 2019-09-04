@@ -5,10 +5,9 @@ import subprocess
 import math
 import numpy as np
 import signal
+import sys
 
-SERVER_IP="172.31.40.47"
-
-def main():
+def main(SERVER_IP):
     # fork to start an iperf on the
     pid = os.fork()
     if (pid > 0):
@@ -58,6 +57,7 @@ def monitor_bw(iperf_pid):
 def print_stat(value):
     print ("crnt bw = %0.3f" % to_gbit(value))
 
-main()
+# you need to pass the IP of the server as the argument
+main(sys.argv[1])
 
 

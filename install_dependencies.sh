@@ -29,5 +29,9 @@ sudo chgrp pcap /usr/sbin/tcpdump
 sudo chmod 750 /usr/sbin/tcpdump
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
 
+# install python3 dependencies for the token measuring tool
+pip3 install psutil
+pip3 install numpy
+
 echo "You now need to log out and log back in, otherwise the wireshark settings won't apply to this session"
 

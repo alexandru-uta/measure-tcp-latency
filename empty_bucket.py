@@ -20,7 +20,7 @@ def main():
         subprocess.call(["iperf3", "-i", "1", "-t", "3600", "-c", SERVER_IP])
           
 def to_gbit(value):
-        return (8 * value) / (1000 * 1000 * 1000)
+    return (8 * value) / (1000 * 1000 * 1000)
 
 def check_bucket(bw_values):
     n = len(bw_values)

@@ -21,7 +21,7 @@ key_name = ""
 
 # instance attributes
 region = "us-west-1"
-instance_type = "c5.2xlarge" 
+instance_type = "c5.xlarge" 
 ami_id = "ami-08fd8ae3806f09a08" # this is an ubuntu ami from us-west-1
 
 

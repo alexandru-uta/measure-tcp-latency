@@ -26,11 +26,11 @@ def to_gbit(value):
 
 def check_bucket(bw_values):
     n = len(bw_values)
-    median1 = np.median(bw_values[:10])
-    median2 = np.median(bw_values[-10:])
+    min1 = np.min(bw_values[:10])
+    max2 = np.max(bw_values[-10:])
     # this parameter (3) here may need to be changed in case the low
     # bandwidth of the token bucket does not fit the formula
-    if median2 * 3 < median1:
+    if min1 * 0.75 > max2:
         return True
     return False
 

@@ -64,14 +64,14 @@ def monitor_bw(iperf_pid):
         time.sleep(1)
         count += 1
         if (count > 3600):
-			f = open(outfile_bucket, "w")
-			f.write("no bucket identified")
-			f.close()
-			f2.close()
-			break
+            f = open(outfile_bucket, "w")
+            f.write("no bucket identified")
+            f.close()
+            f2.close()
+            break
 
 def print_stat(f, value):
-    f.write("crnt bw = %0.3f" % to_gbit(value))
+    f.write("crnt bw = %0.3f\n" % to_gbit(value))
 
 # you need to pass the IP of the server as the argument
 main(sys.argv[1])

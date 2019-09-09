@@ -9,6 +9,7 @@ import sys
 
 outfile_bucket = "token_bucket.txt"
 outfile_data = "traffic_data.txt"
+TIMEOUT = 7200
 
 def main(SERVER_IP):
     # fork to start an iperf on the
@@ -19,7 +20,7 @@ def main(SERVER_IP):
     else:
         print("child")
         # child starts an iperf3 client
-        subprocess.call(["iperf3", "-i", "1", "-t", "3600", "-c", SERVER_IP])
+        subprocess.call(["iperf3", "-i", "1", "-t", str(TIMEOUT), "-c", SERVER_IP])
           
 def to_gbit(value):
     return (8 * value) / (1000 * 1000 * 1000)
@@ -65,7 +66,7 @@ def monitor_bw(iperf_pid):
         old_value = new_value
         time.sleep(1)
         count += 1
-        if (count > 3600):
+        if (count > TIMEOUT):
             f = open(outfile_bucket, "w")
             f.write("no bucket identified")
             f.close()

@@ -21,6 +21,7 @@ key_name = ""
 
 # instance attributes
 region = "us-west-1"
+avail_zone = "us-west-1a"
 instance_type = "c5.xlarge" 
 ami_id = "ami-08fd8ae3806f09a08" # this is an ubuntu ami from us-west-1
 
@@ -32,7 +33,8 @@ def create_VM(vmid):
 	ec2_client   = boto3.client('ec2')
 	vm_id = ""
 	if (vmid == None):
-		vm = ec2_resource.create_instances(ImageId = ami_id, InstanceType = instance_type, KeyName = key_name, MaxCount = 1, MinCount = 1)
+		vm = ec2_resource.create_instances(ImageId = ami_id, InstanceType = instance_type,
+		 KeyName = key_name, MaxCount = 1, MinCount = 1, Placement = {"AvailabilityZone": avail_zone})
 		print vm[0].id
 		vm_id = vm[0].id
 		# give the VM time to boot up
@@ -117,7 +119,7 @@ pid = os.fork()
 if (pid > 0):
 	run_iperf(server_vm)
 	# poll client from time to time to see whether the emptying bucket script finished
-	count = 3800 # do this for slightly more than an hour
+	count = 300 # do this for two hours
 	while count > 0:
 		time.sleep(30)
 		output = check_token_file(client_vm)

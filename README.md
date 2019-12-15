@@ -20,4 +20,4 @@ Usage:
 4) Run ./measure_latency.sh .
 5) Analyze the contents of the result files.
 
-
+The repository also contains a set of scripts to measure the token bucket parameters that Amazon EC2 uses to allocate bandwidth. For more details see the article mentioned above.

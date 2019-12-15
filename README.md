@@ -3,7 +3,7 @@
 
 This repository is a software artifact for the following article:
 
-Alexandru Uta, Alexandru Custura, Dmitry Duplyakin, Ivo Jimenez, Jan Rellermeyer, Carlos Maltzahn, Robert Ricci, Alexandru Iosup. Is Big Data Performance Reproducible in Modern Cloud Networks?. In proceedings of 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI), 2020, February 25-27, Santa Clara, USA.
+# Alexandru Uta, Alexandru Custura, Dmitry Duplyakin, Ivo Jimenez, Jan Rellermeyer, Carlos Maltzahn, Robert Ricci, Alexandru Iosup. Is Big Data Performance Reproducible in Modern Cloud Networks?. In proceedings of 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI), 2020, February 25-27, Santa Clara, USA.
 
 
 =================================================================

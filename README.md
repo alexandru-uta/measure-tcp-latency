@@ -20,4 +20,7 @@ Usage:
 4) Run ./measure_latency.sh .
 5) Analyze the contents of the result files.
 
-The repository also contains a set of scripts to measure the token bucket parameters that Amazon EC2 uses to allocate bandwidth. For more details see the article mentioned above.
+The repository also contains a set of scripts to measure the token bucket parameters that Amazon EC2 uses to allocate bandwidth. For more details see the article mentioned above. 
+
+To measure the token bucket parameters of Amazon EC2 instances, you should run the measure_tokenbucket.py python script. Be sure to fill in your EC2 account details beforehand as the script automates creating two VMs and then automatically starts scripts to measure traffic between the two.
+
